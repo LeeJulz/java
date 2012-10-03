@@ -1,0 +1,22 @@
+/* 
+    Document   : estilo
+    Created on : 03-oct-2012, 1:46:14
+    Author     : ripper
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+th {
+        background-color: #0000ff;
+        color: #fafafa;
+    }
+
+    tr.tab_odd_row {
+        background-color: #fefeff;
+        color: #4e6a71;
+    }
+
+    tr.tab_even_row {
+        background-color: #eff5fa;
+        color: #4e6a71;
+    }
