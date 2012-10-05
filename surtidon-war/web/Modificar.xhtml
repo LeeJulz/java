@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Modificar</title>
+        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="css/estilo.css"/>
+    </h:head>
+    <h:body>
+        
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Modificar Producto"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Idproducto:" for="idproducto" />
+                    <h:inputText id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
+                    <h:outputLabel value="Nombredelproducto:" for="nombredelproducto" />
+                    <h:inputText id="nombredelproducto" value="#{inventario.irPorDetalles().nombredelproducto}" title="Nombredelproducto" />
+                    <h:outputLabel value="Precio:" for="precio" />
+                    <h:inputText id="precio" value="#{inventario.irPorDetalles().precio}" title="Precio" />
+                    <h:outputLabel value="Marca:" for="marca" />
+                    <h:inputText id="marca" value="#{inventario.irPorDetalles().marca}" title="Marca" />
+                    <h:outputLabel value="Cantidad:" for="cantidad" />
+                    <h:inputText id="cantidad" value="#{inventario.irPorDetalles().cantidad}" title="Cantidad" />
+                    <h:outputLabel value="Unidad:" for="unidad" />
+                    <h:inputText id="unidad" value="#{inventario.irPorDetalles().unidad}" title="Unidad" />
+                    <h:outputLabel value="Descripcion:" for="descripcion" />
+                    <h:inputTextarea cols="30" rows="10" id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
+                </h:panelGrid>
+                <h:commandButton id="update" value="Modificar" action="#{inventario.actualizar()}"/> 
+                <h:commandButton id="back" value="Atras" action="#{inventario.lista()}"/>
+            </h:form>
+        </f:view>
+
+
+    </h:body>
+</html>
+

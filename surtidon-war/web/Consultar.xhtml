@@ -4,13 +4,13 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Inventario</title>
+        <title>Consultar</title>
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="css/estilo.css"/>
     </h:head>
     <h:body>
         <f:view>
             <h:form>
-                <h1><h:outputText value="Lista"/></h1>
+                <h1><h:outputText value="Consultar Productos"/></h1>
                 <h:dataTable value="#{inventario.llamarLista()}" var="item">
                     <h:column>
                         <f:facet name="header">

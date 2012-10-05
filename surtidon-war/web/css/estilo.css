@@ -5,7 +5,9 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
+h1 {
+    color: #FF0000;
+}
 th {
         background-color: #0000ff;
         color: #fafafa;

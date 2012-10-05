@@ -4,11 +4,10 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Agregar Producto</title>
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="css/estilo.css"/>
     </h:head>
     <h:body>
-        
         <f:view>
             <h:form>
                 <h1><h:outputText value="Create/Edit"/></h1>
@@ -26,13 +25,10 @@
                     <h:outputLabel value="Unidad:" for="unidad" />
                     <h:inputText id="unidad" value="#{inventario.irPorDetalles().unidad}" title="Unidad" />
                     <h:outputLabel value="Descripcion:" for="descripcion" />
-                    <h:inputTextarea cols="30" rows="10" id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
+                    <h:inputText id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
                 </h:panelGrid>
-                <h:commandButton id="update" value="Update" action="#{inventario.actualizar()}"/> 
-                <h:commandButton id="back" value="Back" action="#{inventario.lista()}"/>
             </h:form>
         </f:view>
-
 
     </h:body>
 </html>

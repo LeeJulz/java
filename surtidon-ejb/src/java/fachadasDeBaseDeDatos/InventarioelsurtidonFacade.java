@@ -61,7 +61,7 @@ public class InventarioelsurtidonFacade extends AbstractFacade<Inventarioelsurti
         {
             Logger.getLogger(InventarioelsurtidonFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Customer updated in CustomerSessionBean!");
+        System.out.println("El inventario fue actualizado");
         return actualizar;
     }
 
