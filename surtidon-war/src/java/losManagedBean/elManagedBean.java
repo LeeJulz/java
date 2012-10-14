@@ -51,4 +51,7 @@ public class elManagedBean {
         System.out.println("###LIST###");
         return "LIST";
     }
+    
+  
+    
 }
