@@ -23,5 +23,20 @@
             <from-outcome>LIST</from-outcome>
             <to-view-id>/Consultar.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>Borrado</from-outcome>
+            <to-view-id>/Consultar.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Crear.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Guardado</from-outcome>
+            <to-view-id>/Consultar.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Atras</from-outcome>
+            <to-view-id>/menu.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>

@@ -52,6 +52,11 @@ public class elManagedBean {
         return "LIST";
     }
     
+    public String borrar() {
+        inventarioelsurtidonFacade.remove(inventarioelsurtidon);
+        return "Borrado";
+    }
+    
   
     
 }

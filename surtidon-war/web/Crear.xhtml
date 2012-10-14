@@ -2,33 +2,74 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Agregar Producto</title>
-        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="css/estilo.css"/>
+        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
     </h:head>
     <h:body>
         <f:view>
-            <h:form>
-                <h1><h:outputText value="Create/Edit"/></h1>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="Idproducto:" for="idproducto" />
-                    <h:inputText id="idproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.idproducto}"/>
-                    <h:outputLabel value="Nombredelproducto:" for="nombredelproducto" />
-                    <h:inputText id="nombredelproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.nombredelproducto}" />
-                    <h:outputLabel value="Precio:" for="precio" />
-                    <h:inputText id="precio" value="#{crearRegistroManagedBean.inventarioelsurtidon.precio}"  />
-                    <h:outputLabel value="Marca:" for="marca" />
-                    <h:inputText id="marca" value="#{crearRegistroManagedBean.inventarioelsurtidon.marca}" />
-                    <h:outputLabel value="Cantidad:" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{crearRegistroManagedBean.inventarioelsurtidon.cantidad}" />
-                    <h:outputLabel value="Unidad:" for="unidad" />
-                    <h:inputText id="unidad" value="#{crearRegistroManagedBean.inventarioelsurtidon.unidad}"  />
-                    <h:outputLabel value="Descripcion:" for="descripcion" />
-                    <h:inputText id="descripcion" value="#{crearRegistroManagedBean.inventarioelsurtidon.descripcion}"/>
-                </h:panelGrid>
-                <h:commandButton action="#{crearRegistroManagedBean.gravar}" value="Guardar"/>
-            </h:form>
+
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div id="header">
+                    Tienda y Abarrotes El SurtiDon
+                    </div>
+                    <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Recursos">
+                            <p:menuitem value="Menu" url="faces/menu.xhtml" />
+                            <p:menuitem value="Consultar" url="faces/Consultar.xhtml" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:form>
+                        <h1><h:outputText value="Nuevo Producto"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Id producto:" for="idproducto" />
+                            <h:inputText id="idproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.idproducto}"/>
+                            <h:outputLabel value="Nombre del producto:" for="nombredelproducto" />
+                            <h:inputText id="nombredelproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.nombredelproducto}" />
+                            <h:outputLabel value="Precio:" for="precio" />
+                            <h:inputText id="precio" value="#{crearRegistroManagedBean.inventarioelsurtidon.precio}"  />
+                            <h:outputLabel value="Marca:" for="marca" />
+                            <h:inputText id="marca" value="#{crearRegistroManagedBean.inventarioelsurtidon.marca}" />
+                            <h:outputLabel value="Cantidad:" for="cantidad" />
+                            <h:inputText id="cantidad" value="#{crearRegistroManagedBean.inventarioelsurtidon.cantidad}" />
+                           
+                            <h:outputLabel value="Unidad:" for="unidad" />  
+                            <p:selectOneMenu id="unidad" value="#{crearRegistroManagedBean.inventarioelsurtidon.unidad}">  
+                                <f:selectItem itemLabel="Selecciona" itemValue="" />  
+                                <f:selectItem itemLabel="Piezas" itemValue="Piezas" /> 
+                                <f:selectItem itemLabel="Tonealadas" itemValue="Toneladas" />  
+                                <f:selectItem itemLabel="Kilogramo" itemValue="Kilogramo" />  
+                                <f:selectItem itemLabel="Gramos" itemValue="Gramos" />
+                                <f:selectItem itemLabel="Galones" itemValue="Galones" />  
+                                <f:selectItem itemLabel="Litros" itemValue="Litros" />  
+                            </p:selectOneMenu>  
+                            <h:outputLabel value="Descripcion:" for="descripcion" />
+                            <h:inputText id="descripcion" value="#{crearRegistroManagedBean.inventarioelsurtidon.descripcion}"/>
+                        </h:panelGrid>
+                        <h:commandButton action="#{crearRegistroManagedBean.gravar}" value="Guardar"/>
+                    </h:form>
+                </p:layoutUnit>
+
+            </p:layout>
         </f:view>
 
     </h:body>

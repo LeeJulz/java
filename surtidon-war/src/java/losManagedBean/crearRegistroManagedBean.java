@@ -30,9 +30,9 @@ public class crearRegistroManagedBean {
     //Inicia metodos para guardar registros en la BD
     public String gravar() {
         inventarioelsurtidonFacade.create(inventarioelsurtidon);
-        return null;
+        return "Guardado";
     }
-
+    
     public Inventarioelsurtidon getInventarioelsurtidon() {
         return inventarioelsurtidon;
     }
@@ -41,4 +41,6 @@ public class crearRegistroManagedBean {
         this.inventarioelsurtidon = inventarioelsurtidon;
     }
     //Finalizan elementos necesatrios para guardar resgustros en la bd
+    
+    
 }

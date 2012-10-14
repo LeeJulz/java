@@ -2,25 +2,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Consultar</title>
-        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="css/estilo.css"/>
+        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
     </h:head>
     <h:body>
         <f:view>
-            <h:form>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div id="header">
+                    Tienda y Abarrotes El SurtiDon
+                    </div>
+                    <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Recursos">
+                            
+                            <p:menuitem value="Menu" url="faces/menu.xhtml" />
+                            <p:menuitem value="Crear" url="faces/Crear.xhtml" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+ 
+                    <h:form>
                 <h1><h:outputText value="Consultar Productos"/></h1>
-                <h:dataTable value="#{inventario.llamarLista()}" var="item">
+                <h:dataTable value="#{inventario.llamarLista()}" var="item"
+                         border="1" cellspacing="2" cellpadding="1"
+                         rowClasses="tab_odd_row,tab_even_row">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Idproducto"/>
+                            <h:outputText value="Id del producto"/>
                         </f:facet>
                         <h:commandLink action="#{inventario.mostrarDetalles(item)}" value="#{item.idproducto}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Nombredelproducto"/>
+                            <h:outputText value="Nombre del producto"/>
                         </f:facet>
                         <h:outputText value="#{item.nombredelproducto}"/>
                     </h:column>
@@ -56,9 +86,12 @@
                     </h:column>
                 </h:dataTable>
             </h:form>
+                    
+                </p:layoutUnit>
 
+            </p:layout>
+            
         </f:view>
-
     </h:body>
 </html>
 

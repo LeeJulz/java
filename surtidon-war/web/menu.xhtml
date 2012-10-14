@@ -11,26 +11,31 @@
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>Menu</title>
             </f:facet>
+          <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
         </h:head>
 
         <h:body>
 
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    Header
+                <p:layoutUnit  position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div id="header">
+                    Tienda y Abarrotes El SurtiDon
+                    </div>
+                    <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
+
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
                     Footer
                 </p:layoutUnit>
 
-                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
                     <p:menu>
-                        <p:submenu label="Resources">
+                        <p:submenu label="Recursos">
                             <p:menuitem value="Consultar" url="faces/Consultar.xhtml" />
                             <p:menuitem value="Crear" url="faces/Crear.xhtml" />
-                            <p:menuitem value="Modificar" url="faces/Modificar.xhtml" />
+                            
                             <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
 
                         </p:submenu>
@@ -39,7 +44,7 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    Welcome to PrimeFaces
+                    Tienda El Surtidon
                 </p:layoutUnit>
 
             </p:layout>
