@@ -46,7 +46,7 @@
                         <h1><h:outputText value="Modificar Producto"/></h1>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Idproducto:" for="idproducto" />
-                            <h:inputText id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
+                            <h:inputText readonly="true" id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
                             <h:outputLabel value="Nombredelproducto:" for="nombredelproducto" />
                             <h:inputText id="nombredelproducto" value="#{inventario.irPorDetalles().nombredelproducto}" title="Nombredelproducto" />
                             <h:outputLabel value="Precio:" for="precio" />
