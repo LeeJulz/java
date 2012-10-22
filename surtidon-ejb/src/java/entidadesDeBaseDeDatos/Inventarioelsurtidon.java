@@ -8,20 +8,21 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Ripper
+ * @author ripper
  */
 @Entity
-@Table(name = "INVENTARIOELSURTIDON")
+@Table(name = "INVENTARIOELSURTIDON", catalog = "", schema = "SURTIDON")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Inventarioelsurtidon.findAll", query = "SELECT i FROM Inventarioelsurtidon i"),
@@ -35,25 +36,25 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Inventarioelsurtidon implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Column(name = "IDPRODUCTO")
+    @Column(name = "IDPRODUCTO", nullable = false)
     private Integer idproducto;
     @Size(max = 30)
-    @Column(name = "NOMBREDELPRODUCTO")
+    @Column(name = "NOMBREDELPRODUCTO", length = 30)
     private String nombredelproducto;
     @Column(name = "PRECIO")
     private Integer precio;
     @Size(max = 30)
-    @Column(name = "MARCA")
+    @Column(name = "MARCA", length = 30)
     private String marca;
     @Column(name = "CANTIDAD")
     private Integer cantidad;
     @Size(max = 20)
-    @Column(name = "UNIDAD")
+    @Column(name = "UNIDAD", length = 20)
     private String unidad;
     @Size(max = 200)
-    @Column(name = "DESCRIPCION")
+    @Column(name = "DESCRIPCION", length = 200)
     private String descripcion;
 
     public Inventarioelsurtidon() {
