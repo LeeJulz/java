@@ -9,7 +9,21 @@
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
     </h:head>
     <h:body>
-        <f:view>
+        <f:view><h:form>
+                            <h1><h:outputText value="Create/Edit"/></h1>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Nombredeusuario:" for="nombredeusuario" />
+                                <h:inputText id="nombredeusuario" value="#{inventario.irPorDetallesDeUsuarios().nombredeusuario}" title="Nombredeusuario" required="true" requiredMessage="The Nombredeusuario field is required."/>
+                                <h:outputLabel value="Contra:" for="contra" />
+                                <h:inputText id="contra" value="#{inventario.irPorDetallesDeUsuarios().contra}" title="Contra" required="true" requiredMessage="The Contra field is required."/>
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:inputText id="nombre" value="#{inventario.irPorDetallesDeUsuarios().nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                                <h:outputLabel value="Apellidos:" for="apellidos" />
+                                <h:inputText id="apellidos" value="#{inventario.irPorDetallesDeUsuarios().apellidos}" title="Apellidos" required="true" requiredMessage="The Apellidos field is required."/>
+                                <h:outputLabel value="Email:" for="email" />
+                                <h:inputText id="email" value="#{inventario.irPorDetallesDeUsuarios().email}" title="Email" />
+                            </h:panelGrid>
+                        </h:form>
 
 
             <p:layout fullPage="true">

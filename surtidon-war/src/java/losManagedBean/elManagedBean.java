@@ -5,7 +5,9 @@
 package losManagedBean;
 
 import entidadesDeBaseDeDatos.Inventarioelsurtidon;
+import entidadesDeBaseDeDatos.Usuarios;
 import fachadasDeBaseDeDatos.InventarioelsurtidonFacade;
+import fachadasDeBaseDeDatos.UsuariosFacade;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -18,6 +20,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean (name = "inventario")
 @SessionScoped
 public class elManagedBean {
+    @EJB
+    private UsuariosFacade usuariosFacade;
+    private Usuarios usuarios;
     @EJB
     private InventarioelsurtidonFacade inventarioelsurtidonFacade;
     private Inventarioelsurtidon inventarioelsurtidon;
@@ -57,6 +62,34 @@ public class elManagedBean {
         return "Borrado";
     }
     
-  
+   public List<Usuarios> llamarListaDeUsuarios(){
+        return usuariosFacade.recuperarListaDeUsuarios();
+    }
+    
+    public Usuarios irPorDetallesDeUsuarios(){
+        return usuarios;
+    }
+    
+    public String mostrarDetallesDeusuarios(Usuarios usuarios){
+        this.usuarios = usuarios;
+        return "DETALLES";
+    }
+    
+    public String actualizarDeUsuarios() {
+        System.out.println("###ACTUALIZA###");
+        usuarios = usuariosFacade.update(usuarios);
+        return "SALVADO";
+    }
+    
+    public String listaDeUsuarios() {
+        System.out.println("###LISTA###");
+        return "LISTA";
+    }
+    
+    public String borrarUsuarios() {
+        inventarioelsurtidonFacade.remove(inventarioelsurtidon);
+        usuariosFacade.remove(usuarios);
+        return "USUARIOBORRADO";
+    }
     
 }
