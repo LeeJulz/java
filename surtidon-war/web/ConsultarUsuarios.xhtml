@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Lista De Usuarios</title>
+        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
+    </h:head>
+    <h:body>
+         <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div id="header">
+                    Tienda y Abarrotes El SurtiDon
+                    </div>
+                    <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Recursos">
+                            <p:menuitem value="Menu" url="faces/menu.xhtml" />
+                            <p:menuitem value="Consultar" url="faces/Consultar.xhtml" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    
+                    <f:view>
+                        <h:form>
+                            <h1><h:outputText value="Lista de Usuarios registrados"/></h1>
+                            <h:dataTable value="#{inventario.llamarListaDeUsuarios()}" var="item">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Idusuario"/>
+                                    </f:facet>
+                                      <h:commandLink action="#{inventario.mostrarDetallesDeusuarios(item)}" value="#{item.idusuario}" />
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nombredeusuario"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.nombredeusuario}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Contra"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.contra}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Nombre"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.nombre}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Apellidos"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.apellidos}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Email"/>
+                                    </f:facet>
+                                    <h:outputText value="#{item.email}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+                    </f:view>
+                </p:layoutUnit>
+
+            </p:layout>
+    </h:body>
+</html>
+

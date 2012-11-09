@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author ripper
  */
 @Entity
-@Table(name = "INVENTARIOELSURTIDON", catalog = "", schema = "SURTIDON")
+@Table(name = "INVENTARIOELSURTIDON")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Inventarioelsurtidon.findAll", query = "SELECT i FROM Inventarioelsurtidon i"),
@@ -38,23 +38,24 @@ public class Inventarioelsurtidon implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "IDPRODUCTO", nullable = false)
+    @Column(name = "IDPRODUCTO")
     private Integer idproducto;
     @Size(max = 30)
-    @Column(name = "NOMBREDELPRODUCTO", length = 30)
+    @Column(name = "NOMBREDELPRODUCTO")
     private String nombredelproducto;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "PRECIO")
-    private Integer precio;
+    private Double precio;
     @Size(max = 30)
-    @Column(name = "MARCA", length = 30)
+    @Column(name = "MARCA")
     private String marca;
     @Column(name = "CANTIDAD")
-    private Integer cantidad;
+    private Double cantidad;
     @Size(max = 20)
-    @Column(name = "UNIDAD", length = 20)
+    @Column(name = "UNIDAD")
     private String unidad;
-    @Size(max = 200)
-    @Column(name = "DESCRIPCION", length = 200)
+    @Size(max = 255)
+    @Column(name = "DESCRIPCION")
     private String descripcion;
 
     public Inventarioelsurtidon() {
@@ -80,11 +81,11 @@ public class Inventarioelsurtidon implements Serializable {
         this.nombredelproducto = nombredelproducto;
     }
 
-    public Integer getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
@@ -96,11 +97,11 @@ public class Inventarioelsurtidon implements Serializable {
         this.marca = marca;
     }
 
-    public Integer getCantidad() {
+    public Double getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Integer cantidad) {
+    public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
 

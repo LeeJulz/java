@@ -5,6 +5,7 @@
 package BeansDeNotificacion;
 
 import entidadesDeBaseDeDatos.Inventarioelsurtidon;
+import entidadesDeBaseDeDatos.Usuarios;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.ActivationConfigProperty;
@@ -58,6 +59,39 @@ public class NotificationBean implements MessageListener {
                 sb.append(", ");
                 sb.append("Descripcion=");
                 sb.append(inventarioelsurtidon.getDescripcion());
+                System.out.println(sb.toString());
+            }
+        }
+        catch (JMSException ex)
+        {
+            Logger.getLogger(NotificationBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         try
+        {
+            Object msgObj = ((ObjectMessage)message).getObject();
+            if (msgObj != null)
+            {
+                Usuarios usuarios = (Usuarios)msgObj;
+                System.out.println("El Usuario con los siguientes datos ha sido actualizado:");
+                StringBuilder sb = new StringBuilder();
+                sb.append("Usuario ID=");
+                sb.append(usuarios.getIdusuario());
+                sb.append(", ");
+                sb.append("Nombre de usuario=");
+                sb.append(usuarios.getNombredeusuario());
+                sb.append(", ");
+                sb.append("Contra=");
+                sb.append(usuarios.getContra());
+                sb.append(", ");
+                sb.append("Nombre=");
+                sb.append(usuarios.getNombre());
+                sb.append(", ");
+                sb.append("Apellidos=");
+                sb.append(usuarios.getApellidos());
+                sb.append(", ");
+                sb.append("Email=");
+                sb.append(usuarios.getEmail());
                 System.out.println(sb.toString());
             }
         }

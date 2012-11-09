@@ -1,0 +1,26 @@
+create table "SURTIDON".INVENTARIOELSURTIDON
+(
+	IDPRODUCTO INTEGER 
+	GENERATED ALWAYS AS IDENTITY
+        (START WITH 1, INCREMENT BY 1),
+	NOMBREDELPRODUCTO VARCHAR(30),
+	PRECIO INTEGER,
+	MARCA VARCHAR(30),
+	CANTIDAD INTEGER,
+	UNIDAD VARCHAR(20),
+	DESCRIPCION VARCHAR(200)
+)
+
+Con este script se genera la tabla para el proyecto 
+
+create table INVENTARIOELSURTIDON
+( 
+IDPRODUCTO integer auto_increment, 
+NOMBREDELPRODUCTO varchar(30), 
+PRECIO double, 
+MARCA varchar(30), 
+CANTIDAD double,
+UNIDAD varchar(20), 
+DESCRIPCION varchar(255),
+primary key(idproducto)
+);

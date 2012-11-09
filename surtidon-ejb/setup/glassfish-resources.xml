@@ -21,9 +21,10 @@
         <property name="driverClass" value="org.apache.derby.jdbc.ClientDriver"/>
     </jdbc-connection-pool>
     <jdbc-resource enabled="true" jndi-name="surtidon" object-type="user" pool-name="derby_net_surtidon_surtidonPool"/>
-    <admin-object-resource enabled="true" jndi-name="jms/NotificationQueue"  res-type="javax.jms.Queue"  res-adapter="jmsra">
+    <admin-object-resource enabled="true" jndi-name="jms/NotificationQueue" res-adapter="jmsra" res-type="javax.jms.Queue">
         <property name="Name" value="PhysicalQueue"/>
     </admin-object-resource>
-    <connector-connection-pool name="jms/NotificationQueueFactoryPool"  connection-definition-name="javax.jms.QueueConnectionFactory"  resource-adapter-name="jmsra"/>
-    <connector-resource enabled="true" jndi-name="jms/NotificationQueueFactory" pool-name="jms/NotificationQueueFactoryPool"  />
+    <connector-connection-pool connection-definition-name="javax.jms.QueueConnectionFactory" name="jms/NotificationQueueFactoryPool" resource-adapter-name="jmsra"/>
+    <connector-resource enabled="true" jndi-name="jms/NotificationQueueFactory" pool-name="jms/NotificationQueueFactoryPool"/>
+    <jdbc-resource enabled="true" jndi-name="surtidonwindows" object-type="user" pool-name="derby_net_Surtidon_surtidonPool"/>
 </resources>

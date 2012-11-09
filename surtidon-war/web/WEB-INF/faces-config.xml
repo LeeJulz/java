@@ -39,4 +39,26 @@
             <to-view-id>/menu.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ConsultarUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>DETALLES</from-outcome>
+            <to-view-id>/ModificarUsuarios.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ModificarUsuarios.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>SALVADO</from-outcome>
+            <to-view-id>/ConsultarUsuarios.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>LISTA</from-outcome>
+            <to-view-id>/ConsultarUsuarios.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>USUARIOBORRADO</from-outcome>
+            <to-view-id>/ConsultarUsuarios.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

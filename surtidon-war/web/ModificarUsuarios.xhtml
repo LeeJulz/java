@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+   <h:head>
+        <title>Modificar Usuario</title>
+        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
+    </h:head>
+    <h:body>
+         <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                    <div id="header">
+                    Tienda y Abarrotes El SurtiDon
+                    </div>
+                    <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Recursos">
+                            <p:menuitem value="Menu" url="faces/menu.xhtml" />
+                            <p:menuitem value="Consultar" url="faces/Consultar.xhtml" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    
+                    <f:view>
+                        <h:form>
+                            <h1><h:outputText value="Create/Edit"/></h1>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Idusuario:" for="idusuario" />
+                                <h:inputText id="idusuario" value="#{inventario.irPorDetallesDeUsuarios().idusuario}" title="Idusuario" required="true" requiredMessage="The Idusuario field is required."/>
+                                <h:outputLabel value="Nombredeusuario:" for="nombredeusuario" />
+                                <h:inputText id="nombredeusuario" value="#{inventario.irPorDetallesDeUsuarios().nombredeusuario}" title="Nombredeusuario" required="true" requiredMessage="The Nombredeusuario field is required."/>
+                                <h:outputLabel value="Contra:" for="contra" />
+                                <h:inputText id="contra" value="#{inventario.irPorDetallesDeUsuarios().contra}" title="Contra" required="true" requiredMessage="The Contra field is required."/>
+                                <h:outputLabel value="Nombre:" for="nombre" />
+                                <h:inputText id="nombre" value="#{inventario.irPorDetallesDeUsuarios().nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                                <h:outputLabel value="Apellidos:" for="apellidos" />
+                                <h:inputText id="apellidos" value="#{inventario.irPorDetallesDeUsuarios().apellidos}" title="Apellidos" required="true" requiredMessage="The Apellidos field is required."/>
+                                <h:outputLabel value="Email:" for="email" />
+                                <h:inputText id="email" value="#{inventario.irPorDetallesDeUsuarios().email}" title="Email" />
+                            </h:panelGrid>
+                            <h:commandButton id="update" value="Modificar" action="#{inventario.actualizarDeUsuarios()}"/> 
+                            <h:commandButton id="back" value="Atras" action="#{inventario.listaDeUsuarios()}"/>
+                            <h:commandButton id="borrar" value="Borrar" action="#{inventario.borrarUsuarios()}"/>
+                        </h:form>
+
+
+                    </f:view>
+                </p:layoutUnit>
+
+            </p:layout>
+        </h:body>
+</html>
