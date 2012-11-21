@@ -2,11 +2,14 @@
 <Scene Scope="Project" version="2">
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
-        <Node id="Modificar.xhtml" x="400" y="286" zoom="true"/>
-        <Node id="index.xhtml" x="721" y="73" zoom="true"/>
-        <Node id="Crear.xhtml" x="150" y="300" zoom="false"/>
-        <Node id="Consultar.xhtml" x="416" y="62" zoom="true"/>
-        <Node id="menu.xhtml" x="717" y="48" zoom="true"/>
+        <Node id="Modificar.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="CrearUsuarios.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="Crear.xhtml" x="400" y="150" zoom="false"/>
+        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="menu.xhtml" x="417" y="371" zoom="true"/>
+        <Node id="Consultar.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="ConsultarUsuarios.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="ModificarUsuarios.xhtml" x="150" y="450" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

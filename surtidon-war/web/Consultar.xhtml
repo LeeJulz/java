@@ -19,15 +19,15 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                   blabalbla
+                   blabalbla 
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
                     <p:menu>
                         <p:submenu label="Recursos">
                             
-                            <p:menuitem value="Menu" url="faces/menu.xhtml" />
-                            <p:menuitem value="Crear" url="faces/Crear.xhtml" />
+                            <p:menuitem value="Menu" url="menu.xhtml" />
+                            <p:menuitem value="Crear" url="Crear.xhtml" />
                             <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
 
                         </p:submenu>
@@ -50,7 +50,7 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Nombre del producto"/>
+                            <h:outputText  value="Nombre del producto"/>
                         </f:facet>
                         <h:outputText value="#{item.nombredelproducto}"/>
                     </h:column>
