@@ -121,4 +121,62 @@ function limpiaCantidad(){
 }
 
 //<input type="text" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput">
+/*Funcion para inhabilitar el menu de contexto para copiar y pegar y tambien
+ *para que no se pueda ir hacia atras,fragmento extraido  de NEC 
+ *<script type="text/javascript">
+      	document.oncontextmenu=inhabilitar
+      //<![CDATA[
+		function inhabilitar(){
+		    alert ("Banco Regional de Monterrey.")
+		    return false;
+		}
+
+		onkeydown = function(e) {
+			tecla = e.keyCode;
+			if(e.ctrlKey){
+				if(tecla == 67 || tecla == 82 || tecla == 86 ||tecla == 88){
+					return false;
+					}
+				}
+		    if((tecla == 116) || (tecla == 27))
+		        return false;
+		} 
+
+		if (window.history) {
+	        function noBack(){window.history.forward()}
+	        noBack();
+	        window.onload=noBack;
+	        window.onpageshow=function(evt){if(evt.persisted)noBack()}
+	        window.onunload=function(){void(0)}
+		}
+			
+		
+     // ]]>
+      </script>*/
+      	document.oncontextmenu=inhabilitar
+        //<![CDATA[
+		function inhabilitar(){
+		    alert ("Tienda y Abarrotes El Surtidon.")
+		    return false;
+		}
+
+		onkeydown = function(e) {
+			tecla = e.keyCode;
+			if(e.ctrlKey){
+				if(tecla == 67 || tecla == 82 || tecla == 86 ||tecla == 88){
+					return false;
+					}
+				}
+		    if((tecla == 116) || (tecla == 27))
+		        return false;
+		} 
+
+		if (window.history) {
+	        function noBack(){window.history.forward()}
+	        noBack();
+	        window.onload=noBack;
+	        window.onpageshow=function(evt){if(evt.persisted)noBack()}
+	        window.onunload=function(){void(0)}
+		}
+      // ]]>
 

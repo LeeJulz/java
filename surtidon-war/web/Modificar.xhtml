@@ -4,14 +4,16 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+    <f:view>
     <h:head>
         <title>Modificar</title>
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
+        <script  type="text/javascript" src="resources/javascript/utilidades.js">         
+        </script>
     </h:head>
+    
     <h:body>
         <h:form>
-            <f:view>
-
                 <p:layout fullPage="true">
 
                     <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
@@ -22,7 +24,7 @@
                     </p:layoutUnit>
 
                     <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                        Footer
+                        <p:messages showDetail="true"/>
                     </p:layoutUnit>
 
                     <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
@@ -32,10 +34,6 @@
                                 <p:menuitem value="Menu" url="menu.xhtml" />
                                 <p:menuitem value="Consultar" url="Consultar.xhtml"  />
                                 <p:menuitem value="Crear" url="Crear.xhtml" />
-                                
-
-                                <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
                             </p:submenu>
 
                         </p:menu>
@@ -46,17 +44,17 @@
                         <h1><h:outputText value="Modificar Producto"/></h1>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Idproducto:" for="idproducto" />
-                            <h:inputText readonly="true" id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
+                            <p:inputText readonly="true" id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
                             <h:outputLabel value="Nombredelproducto:" for="nombredelproducto" />
-                            <h:inputText id="nombredelproducto" value="#{inventario.irPorDetalles().nombredelproducto}" title="Nombredelproducto" />
+                            <p:inputText required="true" id="nombredelproducto" value="#{inventario.irPorDetalles().nombredelproducto}" title="Nombredelproducto" />
                             <h:outputLabel value="Precio:" for="precio" />
-                            <h:inputText id="precio" value="#{inventario.irPorDetalles().precio}" title="Precio" />
+                            <p:inputText required="true" id="precio" value="#{inventario.irPorDetalles().precio}" title="Precio" />
                             <h:outputLabel value="Marca:" for="marca" />
-                            <h:inputText id="marca" value="#{inventario.irPorDetalles().marca}" title="Marca" />
+                            <p:inputText  required="true" id="marca" value="#{inventario.irPorDetalles().marca}" title="Marca" />
                             <h:outputLabel value="Cantidad:" for="cantidad" />
-                            <h:inputText id="cantidad" value="#{inventario.irPorDetalles().cantidad}" title="Cantidad" />
+                            <p:inputText required="true" id="cantidad" value="#{inventario.irPorDetalles().cantidad}" title="Cantidad" />
                             <h:outputLabel value="Unidad:" for="unidad" />
-                            <p:selectOneMenu id="unidad" value="#{inventario.irPorDetalles().unidad}">  
+                            <p:selectOneMenu required="true" id="unidad" value="#{inventario.irPorDetalles().unidad}">  
                                 <f:selectItem itemLabel="Selecciona" itemValue="" />  
                                 <f:selectItem itemLabel="Piezas" itemValue="Piezas" /> 
                                 <f:selectItem itemLabel="Tonealadas" itemValue="Toneladas" />  
@@ -66,18 +64,19 @@
                                 <f:selectItem itemLabel="Litros" itemValue="Litros" />  
                             </p:selectOneMenu>  
                             <h:outputLabel value="Descripcion:" for="descripcion" />
-                            <h:inputTextarea cols="30" rows="10" id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
+                            <p:inputTextarea required="true" cols="30" rows="10" id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
                         </h:panelGrid>
                         <h:commandButton id="update" value="Modificar" action="#{inventario.actualizar()}"/> 
                         <h:commandButton id="back" value="Atras" action="#{inventario.lista()}"/>
                         <h:commandButton id="borrar" value="Borrar" action="#{inventario.borrar}"/>
-
+ <p:messages showDetail="true"/>
                     </p:layoutUnit>
 
                 </p:layout>
-            </f:view>
+            
         </h:form>
-
+       
     </h:body>
+    </f:view>
 </html>
 

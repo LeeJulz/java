@@ -7,14 +7,14 @@
     <h:head>
         <title>Agregar Producto.</title>
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
-        <script  type="text/javascript" src="resources/javascript/solonumeros.js">         
+        <script  type="text/javascript" src="resources/javascript/utilidades.js">         
         </script>
     </h:head>
     <h:body>
         <f:view>
             <p:layout fullPage="true">
 
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                <p:layoutUnit position="north" size="100">
                     <div id="header">
                         Tienda y Abarrotes El SurtiDon
                     </div>
@@ -30,8 +30,6 @@
                         <p:submenu label="Recursos">
                             <p:menuitem value="Menu" url="menu.xhtml" />
                             <p:menuitem value="Consultar" url="Consultar.xhtml" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
                         </p:submenu>
 
                     </p:menu>
@@ -42,13 +40,13 @@
                         <h1><h:outputText value="Nuevo Producto"/></h1>
                         <h:panelGrid columns="2">
                             <h:outputLabel value="Nombre del producto:" for="nombredelproducto" />
-                            <h:inputText id="nombredelproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.nombredelproducto}" />
+                            <p:inputText id="nombredelproducto" value="#{crearRegistroManagedBean.inventarioelsurtidon.nombredelproducto}" />
                             <h:outputLabel value="Precio:" for="precio" />
-                            <h:inputText id="precio" onkeypress="return soloNumeros(event)" onblur="limpiaPrecio()" value="#{crearRegistroManagedBean.inventarioelsurtidon.precio}"  />
+                            <p:inputText id="precio" onkeypress="return soloNumeros(event)" onblur="limpiaPrecio()" value="#{crearRegistroManagedBean.inventarioelsurtidon.precio}"  />
                             <h:outputLabel value="Marca:" for="marca" />
-                            <h:inputText id="marca" value="#{crearRegistroManagedBean.inventarioelsurtidon.marca}" />
+                            <p:inputText id="marca" value="#{crearRegistroManagedBean.inventarioelsurtidon.marca}" />
                             <h:outputLabel value="Cantidad:" for="cantidad" />
-                            <h:inputText id="cantidad" onkeypress="return soloNumeros(event)" onblur="limpiaCantidad()" value="#{crearRegistroManagedBean.inventarioelsurtidon.cantidad}" />
+                            <p:inputText id="cantidad" onkeypress="return soloNumeros(event)" onblur="limpiaCantidad()" value="#{crearRegistroManagedBean.inventarioelsurtidon.cantidad}" />
                             <h:outputLabel value="Unidad:" for="unidad" />  
                             <p:selectOneMenu id="unidad" value="#{crearRegistroManagedBean.inventarioelsurtidon.unidad}">  
                                 <f:selectItem itemLabel="Selecciona" itemValue="" />  
@@ -60,7 +58,7 @@
                                 <f:selectItem itemLabel="Litros" itemValue="Litros" />  
                             </p:selectOneMenu>  
                             <h:outputLabel value="Descripcion:" for="descripcion" />
-                            <h:inputText id="descripcion" value="#{crearRegistroManagedBean.inventarioelsurtidon.descripcion}"/>
+                            <p:inputText  id="descripcion" value="#{crearRegistroManagedBean.inventarioelsurtidon.descripcion}"/>
                         </h:panelGrid>
                         <h:commandButton action="#{crearRegistroManagedBean.gravar}" value="Guardar"/>
                     </h:form>

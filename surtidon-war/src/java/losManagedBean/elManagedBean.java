@@ -10,8 +10,10 @@ import fachadasDeBaseDeDatos.InventarioelsurtidonFacade;
 import fachadasDeBaseDeDatos.UsuariosFacade;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -49,6 +51,8 @@ public class elManagedBean {
     public String actualizar() {
         System.out.println("###UPDATE###");
         inventarioelsurtidon = inventarioelsurtidonFacade.actualizarLista(inventarioelsurtidon);
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"Exitoso", "Se ha guardado correctamente"));
         return "SAVED";
     }
     

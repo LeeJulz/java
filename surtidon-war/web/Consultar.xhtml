@@ -7,11 +7,13 @@
     <h:head>
         <title>Consultar</title>
         <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
+        <script  type="text/javascript" src="resources/javascript/utilidades.js">         
+        </script>
     </h:head>
     <h:body>
         <f:view>
             <p:layout fullPage="true">
-                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                <p:layoutUnit position="north" size="100"  >
                     <div id="header">
                     Tienda y Abarrotes El SurtiDon.
                     </div>
@@ -28,8 +30,6 @@
                             
                             <p:menuitem value="Menu" url="menu.xhtml" />
                             <p:menuitem value="Crear" url="Crear.xhtml" />
-                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
-
                         </p:submenu>
 
                     </p:menu>
@@ -39,52 +39,52 @@
  
                     <h:form>
                 <h1><h:outputText value="Consultar Productos"/></h1>
-                <h:dataTable value="#{inventario.llamarLista()}" var="item"
+                <p:dataTable value="#{inventario.llamarLista()}" var="item"
                          border="1" cellspacing="2" cellpadding="1"
                          rowClasses="tab_odd_row,tab_even_row">
-                    <h:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Id del producto"/>
                         </f:facet>
                         <h:commandLink action="#{inventario.mostrarDetalles(item)}" value="#{item.idproducto}" />
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText  value="Nombre del producto"/>
                         </f:facet>
                         <h:outputText value="#{item.nombredelproducto}"/>
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Precio"/>
                         </f:facet>
                         <h:outputText value="#{item.precio}"/>
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Marca"/>
                         </f:facet>
                         <h:outputText value="#{item.marca}"/>
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Cantidad"/>
                         </f:facet>
                         <h:outputText value="#{item.cantidad}"/>
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Unidad"/>
                         </f:facet>
                         <h:outputText value="#{item.unidad}"/>
-                    </h:column>
-                    <h:column>
+                    </p:column>
+                    <p:column>
                         <f:facet name="header">
                             <h:outputText value="Descripcion"/>
                         </f:facet>
                         <h:outputText value="#{item.descripcion}"/>
-                    </h:column>
-                </h:dataTable>
+                    </p:column>
+                </p:dataTable>
             </h:form>
                     
                 </p:layoutUnit>

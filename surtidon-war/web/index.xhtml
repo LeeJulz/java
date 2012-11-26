@@ -2,9 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Index</title>
+        <script  type="text/javascript" src="resources/javascript/utilidades.js">         
+        </script>
     </h:head>
     <h:body>
         <h1>Paginas del Index</h1>
@@ -17,6 +20,37 @@
         <a href="faces/Modificar.xhtml">Modificar</a>
         <br />
         <a href="faces/ConsultarUsuarios.xhtml">ConsultarUsuarios</a>
+        <h:form>
+             <h1><h:outputText value="Modificar Producto"/></h1>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Idproducto:" for="idproducto" />
+                            <p:inputText readonly="true" id="idproducto" value="#{inventario.irPorDetalles().idproducto}" title="Idproducto" required="true" requiredMessage="The Idproducto field is required."/>
+                            <h:outputLabel value="Nombredelproducto:" for="nombredelproducto" />
+                            <p:inputText required="true" id="nombredelproducto" value="#{inventario.irPorDetalles().nombredelproducto}" title="Nombredelproducto" />
+                            <h:outputLabel value="Precio:" for="precio" />
+                            <p:inputText required="true" id="precio" value="#{inventario.irPorDetalles().precio}" title="Precio" />
+                            <h:outputLabel value="Marca:" for="marca" />
+                            <p:inputText  required="true" id="marca" value="#{inventario.irPorDetalles().marca}" title="Marca" />
+                            <h:outputLabel value="Cantidad:" for="cantidad" />
+                            <p:inputText required="true" id="cantidad" value="#{inventario.irPorDetalles().cantidad}" title="Cantidad" />
+                            <h:outputLabel value="Unidad:" for="unidad" />
+                            <p:selectOneMenu required="true" id="unidad" value="#{inventario.irPorDetalles().unidad}">  
+                                <f:selectItem itemLabel="Selecciona" itemValue="" />  
+                                <f:selectItem itemLabel="Piezas" itemValue="Piezas" /> 
+                                <f:selectItem itemLabel="Tonealadas" itemValue="Toneladas" />  
+                                <f:selectItem itemLabel="Kilogramo" itemValue="Kilogramo" />  
+                                <f:selectItem itemLabel="Gramos" itemValue="Gramos" />
+                                <f:selectItem itemLabel="Galones" itemValue="Galones" />  
+                                <f:selectItem itemLabel="Litros" itemValue="Litros" />  
+                            </p:selectOneMenu>  
+                            <h:outputLabel value="Descripcion:" for="descripcion" />
+                            <p:inputTextarea required="true" cols="30" rows="10" id="descripcion" value="#{inventario.irPorDetalles().descripcion}" title="Descripcion" />
+                        </h:panelGrid>
+                        <h:commandButton id="update" value="Modificar" action="#{inventario.actualizar()}"/> 
+                        <h:commandButton id="back" value="Atras" action="#{inventario.lista()}"/>
+                        <h:commandButton id="borrar" value="Borrar" action="#{inventario.borrar}"/>
+ <p:messages showDetail="true"/>
+        </h:form>
     </h:body>
 </html>
 
