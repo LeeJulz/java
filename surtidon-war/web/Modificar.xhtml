@@ -5,32 +5,47 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <f:view>
-    <h:head>
-        <title>Modificar</title>
-        <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
-        <script  type="text/javascript" src="resources/javascript/utilidades.js">         
-        </script>
-    </h:head>
-    
-    <h:body>
-        <h:form>
+        <h:head>
+            <title>Modificar</title>
+            <LINK REL="stylesheet" TYPE="text/css" MEDIA="all" HREF="resources/css/default.css"/>
+            <script  type="text/javascript" src="resources/javascript/utilidades.js">         
+            </script>
+        </h:head>
+
+        <h:body>
+            <h:form>
                 <p:layout fullPage="true">
 
                     <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
                         <div id="header">
-                    Tienda y Abarrotes El SurtiDon
-                    </div>
+                            Tienda y Abarrotes El SurtiDon
+                        </div>
                         <img id="logo" src="resources/imagenes/surtidon.jpg" width="100" height="90" alt="surtidon-logo"/>
                     </p:layoutUnit>
 
                     <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
-                        <p:messages showDetail="true"/>
+                         <center><p>Contacto</p>
+<a href="mailto:risa-beat-box@hotmail.com" title ="correo">
+
+<img src="resources/imagenes/correo.jpeg" width ="50" height="50" align="center"/>
+
+</a>
+<a href="https://github.com/ripper2hl/" title ="Github">
+
+<img src="resources/imagenes/github.png" width ="50" height="50" align="center"/>
+
+</a>
+<a href="https://twitter.com/ripper2hl" title ="twitter">
+
+<img src="resources/imagenes/twitter.jpeg" width ="50" height="50" align="center" /><hr/>
+</a>
+                    </center>
                     </p:layoutUnit>
 
                     <p:layoutUnit position="west" size="175" header="Izquierda" collapsible="true">
                         <p:menu>
                             <p:submenu label="Recursos">
-                                
+
                                 <p:menuitem value="Menu" url="Menu.jsf" />
                                 <p:menuitem value="Consultar" url="Consultar.jsf"  />
                                 <p:menuitem value="Crear" url="Crear.jsf" />
@@ -69,14 +84,14 @@
                         <h:commandButton id="update" value="Modificar" action="#{inventario.actualizar()}"/> 
                         <h:commandButton id="back" value="Atras" action="#{inventario.lista()}"/>
                         <h:commandButton id="borrar" value="Borrar" action="#{inventario.borrar}"/>
- <p:messages showDetail="true"/>
+                        <p:messages showDetail="true"/>
                     </p:layoutUnit>
 
                 </p:layout>
-            
-        </h:form>
-       
-    </h:body>
+
+            </h:form>
+
+        </h:body>
     </f:view>
 </html>
 
